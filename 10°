@@ -1,0 +1,34 @@
+void
+Troca (TipoLista * L, Apondador * P) 
+{
+  
+struct no *ante;
+  
+struct no *prox = P->prox;
+  
+if (prox == NULL)
+    {
+      return;
+    }
+  
+ante = L->cabeca;
+  
+while (ante->prox != P)
+    {
+      
+ante = ante->prox;
+    
+}
+  
+ante->prox = prox;
+  
+P->prox = prox->prox;
+  
+prox->prox = P;
+  
+if (L->ultimo == prox)
+    {
+      L->ultimo = ante;
+    }
+
+}
